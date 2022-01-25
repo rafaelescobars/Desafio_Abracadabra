@@ -36,11 +36,12 @@ app.get('/abracadabra/usuarios', (req, res) => {
 
 app.get('/abracadabra/conejo/:n', (req, res) => {
   const numero = Math.floor(Math.random() * (5 - 1)) + 1
+  console.log(numero);
   const n = req.params.n
 
   numero == n ? res.sendFile(__dirname + '/assets/conejito.jpg') : res.sendFile(__dirname + '/assets/voldemort.jpg')
 })
 
 app.get('*', (req, res) => {
-  res.send('<center><he1>Sorry, aquí no hay nada :/</h1></center>')
+  res.send('<center><h1>Sorry, aquí no hay nada :/</h1></center>')
 })
